@@ -1,0 +1,11 @@
+name: Build and Push ACR
+on:
+  push:
+    branches: ['main']
+
+jobs:
+  build:
+    name: 'Build and Push ACR'
+    runs-on: ubuntu-29.04
+#   environment: dev
+    steps:
