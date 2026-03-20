@@ -15,7 +15,7 @@ jobs:
       - name: Docker Login to ACR
         uses: docker/login-action@v3
         with:
-          registryr: ${{ vars.ACR_URL }}
+          registry: ${{ vars.ACR_URL }}
           username: ${{ vars.ACR_USERNAME }}
           password: ${{ secrets.ACR_PASSWORD }}
 
