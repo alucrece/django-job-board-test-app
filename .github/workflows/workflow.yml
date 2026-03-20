@@ -20,7 +20,7 @@ jobs:
           password: ${{ secrets.ACR_PASSWORD }}
 
       - name: Build and Push to ACR
-        usess: docker/build-push-action@v6
+        uses: docker/build-push-action@v6
         with:
           push: true
           tags: ${{ vars.ACR_URL }}/django-job-board:latest
