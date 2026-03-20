@@ -6,7 +6,7 @@ on:
 jobs:
   build:
     name: 'Build and Push ACR'
-    runs-on: ubuntu-29.04
+    runs-on: ubuntu-24.04
     environment: dev
     steps:
       - name: Checkout
