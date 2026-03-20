@@ -1,11 +1,27 @@
 name: Build and Push ACR
 on:
   push:
-    branches: ['main']
+    branches: ['feature/cicd']
 
 jobs:
   build:
     name: 'Build and Push ACR'
     runs-on: ubuntu-29.04
-#   environment: dev
+    environment: dev
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Docker Login to ACR
+        uses: azure/docker-login@v3
+        with:
+          registryr: ${{ vars.ACR_URL }}
+          username: ${{ vars.ACR_USERNAME }}
+          password: ${{ secrets.ACR_PASSWORD }}
+
+      - name: Build and Push to ACR
+        usess: docker/build-push-action@v6
+        whith:
+          push: true
+          tags: ${{ vars.ACR_URL }}/django-job-board:latest
+          file: Dockerfile
