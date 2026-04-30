@@ -146,7 +146,7 @@ if AZURE_ACCOUNT_NAME and AZURE_ACCOUNT_KEY:
             "OPTIONS": {
                 "account_name": AZURE_ACCOUNT_NAME,
                 "account_key": AZURE_ACCOUNT_KEY,
-                "azure_container": "media", # Pour les uploads utilisateurs
+                "azure_container": "media", # for media files, we use a different container with public access
             },
         },
         "staticfiles": {
